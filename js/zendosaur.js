@@ -105,7 +105,7 @@ function recipegen(rule, dinoname) {
   var recipe;
   dinoname = 'Stego'; // FIXME
   var size = [0,'small','medium','large'];
-  var color = [0,'red','green','yellow'];  
+  var color = [0,'nut','plant','insect'];  
   recipe = dinoname;
   if (rule.num && rule.size && rule.color) {
     if (rule.num > 1) {
@@ -139,4 +139,15 @@ function recipegen(rule, dinoname) {
     recipe += " wants to eat a "+color[rule.color]+" portion.";
   }
   return recipe;
+}
+
+function parsepalettemeal() {
+  var meal = [];
+  $('.palette .foodtainer').each(function(){ 
+    if ($(this).data("food")) {
+      var arr = $(this).data("food").split(' ');
+      meal.push({ size: arr[0], color: arr[1] } ); 
+    }
+  });
+  return meal; 
 }
