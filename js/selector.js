@@ -2,6 +2,7 @@ function clearPalette() {
   $("#keypad .palette .foodtainer").html('<img src="assets/empty.jpg"/>');
   $("#keypad .palette .foodtainer").removeData('food');
   $("#keypad .palette .foodtainer").removeClass("selected");
+  $("#keypad .palette .foodtainer").eq(0).addClass("selected")
 }
 $(document).ready(function(){
   $("#keypad .palette .foodtainer").click(function(){
@@ -14,6 +15,7 @@ $(document).ready(function(){
     var thisimage = $(this).html();
     selected.data('food', thisfood);
     selected.html(thisimage);
+    selected.removeClass("selected").next().addClass("selected");
   })
 
 });
