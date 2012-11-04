@@ -39,17 +39,8 @@ html {
 
 
 
-.dinoart {
-    width: 100%;
-}
-
-.healthbar {
-    width:100%;
-}
-
-
-
 .guesses {
+    list-style: none;
     width: 100%;
 }
 
@@ -63,7 +54,26 @@ html {
 
 
 
-.setter {
+.dinobar {
+    width: 100%;
+}
+
+.dinoart {
+    height: 400px;
+    background-color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.healthbar {
+    width:100%;
+    height: 40px;
+    background-color: green;
+}
+
+
+
+.keypad {
     width: 100%;
 }
 
