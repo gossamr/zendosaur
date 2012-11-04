@@ -196,5 +196,10 @@ html {
 }
 .foodtainer.insect.large {
   background:url('../assets/large_insect.png');
-  
+}
+.rancherhead.happy {
+  background: green;
+}
+.rancherhead.sad {
+  background: red;
 }

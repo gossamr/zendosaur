@@ -19,7 +19,7 @@ $(document).ready( function() {
   
   // the view container for the guesses
   var GuessView = Backbone.View.extend({
-    el: $('body'),
+    el: $('.guesslist'),
     events: {
       'click button#feed': 'addGuess'
     },
@@ -47,7 +47,7 @@ $(document).ready( function() {
         foods : [
           new Food({size : "small", food : "nut"}),
           new Food({size : "large", food : "nut"}),
-          new Food({size : "small", food : "fern"})
+          new Food({size : "small", food : "plant"})
           
         ],
         is_happy : mealeval(number_meal, Zen_Rule)
@@ -62,13 +62,13 @@ $(document).ready( function() {
     
       for (var i = 0; i < guess.get("foods").length; i++) {
         var g = guess.get("foods")[i];
-        html_str += "<div class='foodtainer "+ g.get("size") + " "+ g.get("food")
-         + " '>" + g.get("size") + " "+ g.get("food") +  "</div>"
+        
+        html_str += "<div class='foodtainer'><img src='assets/"+ g.get("size") +"_"+  g.get("food")+".png'>"+" </div>"
       }
       html_str +="</li>";
       console.log("the element")
       console.log($( this.el));
-      $(".dinospot", this.el).append(html_str);
+      $( this.el).append(html_str);
     }
   });
   
