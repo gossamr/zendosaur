@@ -19,7 +19,7 @@ function rnd(num) {
 }
 
 function rndrule() {
-  type = rnd(3); 
+  type = rnd(6); 
   var rule = {};
   // food has color(3), size(3)
   switch(type) {
@@ -30,7 +30,24 @@ function rndrule() {
       rule.size = rnd(3);
       break;
     case 3:
-      rule.num = rnd(3);
+      rule.num = rnd(4);
+      break;
+    case 4:
+      rule.num = rnd(4);
+      rule.color = rnd(3);
+      break;
+    case 5:
+      rule.num = rnd(4);
+      rule.size = rnd(3);
+      break;
+    case 6:
+      rule.color = rnd(3);
+      rule.size = rnd(3);
+      break;
+    case 7:
+      rule.num = rnd(4);
+      rule.color = rnd(3);
+      rule.size = rnd(3);
       break;
   }
   return rule;
@@ -63,34 +80,71 @@ function mealgen(rule) {
   return meal;
 }
 
-function mealeval(meal, rule) {
-  var match = 0;
-  if (rule.num && meal.length == rule.num) { match = 1; };
-  for (var i = 0; i < meal.length; i++) {  
-    if (rule.size && meal[i].size == rule.size) {
-      match = 1;
-    }
-    if (rule.color && meal[i].color == rule.color) {
-      match = 1;
-    }
+function numeval(meal, rule) {
+  if (rule.num) {
+    return (meal.length == rule.num); 
   }
-  return match;
+  return true;
 }
 
-function recipegen(rule) {
+function sizeeval(food, rule) {
+  if (rule.size) {
+    return (food.size == rule.size);
+  }
+  return true;
+}
+
+function coloreval(food, rule) {
+  if (rule.color) {
+    return (food.color == rule.color);
+  }
+  return true;
+}
+
+function mealeval(meal, rule) {
+  var match = false;
+  for (i = 0; i < meal.length; i++) {
+    match = match || (sizeeval(meal[i], rule) && coloreval(meal[i], rule));
+  }
+  return numeval(meal, rule) && match;
+}
+
+function recipegen(rule, dinoname) {
   var recipe;
+  dinoname = 'Stego'; // FIXME
   var size = [0,'small','medium','large'];
   var color = [0,'red','green','yellow'];  
-  if (rule.num > 1) {
-    recipe = "He wants to eat "+rule.num+" bites.";
-  } else {
-    recipe = "He wants to eat 1 bite.";
-  }
-  if (rule.size) {
-    recipe = "He wants to eat a "+size[rule.size]+" portion.";
-  }
-  if (rule.color) {
-    recipe = "He wants to eat a "+color[rule.color]+" bite.";
+  recipe = dinoname;
+  if (rule.num && rule.size && rule.color) {
+    if (rule.num > 1) {
+      recipe += " wants to eat a "+size[rule.size]+" "+color[rule.color]+" portion among "+rule.num+" foods.";
+    } else {
+      recipe += " wants to eat only one food.";
+    }
+  } else if (rule.size && rule.color) {
+    recipe += " wants to eat a "+size[rule.size]+" "+color[rule.color]+" portion.";
+  } else if (rule.num && rule.color) {
+    if (rule.num > 1) {
+      recipe += " wants to eat a "+color[rule.color]+" portion among "+rule.num+" foods.";
+    } else {
+      recipe += " wants to eat only one "+color[rule.color]+" food.";
+    }
+  } else if (rule.num && rule.size) {
+    if (rule.num > 1) {
+      recipe += " wants to eat a "+size[rule.size]+" portion among "+rule.num+" foods.";
+    } else {
+      recipe += " wants to eat only one "+size[rule.size]+" food.";
+    }
+  } else if (rule.num) {
+    if (rule.num > 1) {
+      recipe += " wants to eat "+rule.num+" foods.";
+    } else {
+      recipe += " wants to eat only one food.";
+    }
+  } else if (rule.size) {
+    recipe += " wants to eat a "+size[rule.size]+" portion.";
+  } else if (rule.color) {
+    recipe += " wants to eat a "+color[rule.color]+" portion.";
   }
   return recipe;
 }
