@@ -13,35 +13,17 @@ html {
     height: 100%;
     margin-right: auto;
     margin-left: auto;
-    background-color: blue;
+    background-color: red;
 }
-
-
-
-.mastermeal {
-    width: 100%;
-    background-color: yellow;
-}
-
-    .mastermeal > div {
-        float: left;
-        width: 20%;
-        height: 150px;
-    }
-
-    .mastermeal .masterhead {
-        background-color: black;
-    }
-
-    .mastermeal .foodtainer {
-        background-color: red;
-    }
 
 
 
 .guesslist {
     list-style: none;
-    width: 100%;
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-color: blue;
 }
 
 .guess {
@@ -49,17 +31,32 @@ html {
 }
 
     .guess > div {
+        float: left;
         width: 20%;
+        height: 80px;
+    }
+
+    .guess .rancherhead {
+        background-color: black;
+    }
+
+    .guess .number {
+        background-color: black;
+    }
+
+    .guess .foodtainer {
+        background-color: red;
     }
 
 
 
-.dinobar {
-    width: 100%;
+.dinospot {
+    width: 50%;
+    float: right;
 }
 
 .dinoart {
-    height: 400px;
+    height: 300px;
     background-color: yellow;
     margin-left: auto;
     margin-right: auto;
@@ -74,16 +71,26 @@ html {
 
 
 .keypad {
+    float: right;
+    width: 50%;
+    background: orange;
+}
+
+.palette {
     width: 100%;
 }
 
-.pallette {
-    width: 100%;
-}
-
-    .pallette > div {
+    .palette > div {
+        float: left;
         width: 25%;
+        height: 40px;
     }
+
+    .palette .foodtainer {
+        background-color: purple;
+    }
+
+
 
 
 
@@ -96,7 +103,13 @@ html {
     }
 
         .grid .row > div {
-            width: 33%
+            width: 33.3%;
+            height: 40px;
+            float: left;
+        }
+
+        .grid .row .foodtainer {
+            background: cornflowerblue;
         }
 
 
