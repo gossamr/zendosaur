@@ -43,14 +43,25 @@ $(document).ready( function() {
       
       //will need to extract these foods from the html configuration
       number_meal = [];
+      var current_pal  = parsepalettemeal();
+      
+      var map_size = [0,'small','med','large'];
+      var color = [0,'nut','plant','insect'];  
+      //meal is an array with food objects that have size property and food-type property
+      
+      var foods_array = [];
+      
+      for(var i = 0; i < current_pal.length; i++) {
+        var food = current_pal[i];
+        
+        foods_array.push(new Food({size : map_size[food.size], food : color[food.color]}));
+        
+      }
+      console.log("the guess checking")
+      console.log(Zen_Rule);
       var meal = new Meal({
-        foods : [
-          new Food({size : "small", food : "nut"}),
-          new Food({size : "large", food : "nut"}),
-          new Food({size : "small", food : "plant"})
-          
-        ],
-        is_happy : mealeval(number_meal, Zen_Rule)
+        foods : foods_array,
+        is_happy : mealeval(current_pal, Zen_Rule)
         
       })
       this.collection.add(meal); // add item to collection; view is updated via event 'add'
