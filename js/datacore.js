@@ -21,7 +21,7 @@ $(document).ready( function() {
   var GuessView = Backbone.View.extend({
     el: $('.guesslist'),
     events: {
-      'click button#feed': 'addGuess'
+      'click #feed': 'addGuess'
     },
     initialize: function(){
       _.bindAll(this, 'render', 'addGuess', 'appendGuess'); // remember: every function that uses 'this' as the current object should be in here
@@ -35,7 +35,6 @@ $(document).ready( function() {
   
     render: function() {
       var self = this;
-      $(this.el).append("<button id='feed'>Make guess/feed</button>");
       
     },
     addGuess: function() {

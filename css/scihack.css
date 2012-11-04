@@ -16,7 +16,18 @@ html {
     background-color: white;
 }
 
+.logo {
+    background-image: url("images/zendosaurlogo.png");
+    width: ;
+}
 
+.green {
+    background-color: #90EE90;
+}
+
+.red {
+    background-color: #FFB6C1;
+}
 
 .guesslist {
     list-style: none;
@@ -196,10 +207,13 @@ html {
 }
 .foodtainer.insect.large {
   background:url('../assets/large_insect.png');
+
 }
 .rancherhead.happy {
   background: green;
 }
 .rancherhead.sad {
   background: red;
-}
+}  
+
+
