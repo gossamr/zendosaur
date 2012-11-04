@@ -1,5 +1,5 @@
 
-(function($){
+$(document).ready( function() {
   
   var Food = Backbone.Model.extend({
     defaults: {
@@ -36,11 +36,13 @@
     render: function() {
       var self = this;
       $(this.el).append("<button id='feed'>Make guess/feed</button>");
-      $('.page', this.el).append("<button>uheot</button>")
       
     },
     addGuess: function() {
+      //on clicking the guess button, take the info from the dom of where the guess is located, and then translate it into a meal.  take the meal and compare it with mealeval(meal, rule)
+      
       //will need to extract these foods from the html configuration
+      number_meal = [];
       var meal = new Meal({
         foods : [
           new Food({size : "small", food : "nut"}),
@@ -48,7 +50,7 @@
           new Food({size : "small", food : "fern"})
           
         ],
-        is_happy : Math.round(Math.random())
+        is_happy : mealeval(number_meal, Zen_Rule)
         
       })
       this.collection.add(meal); // add item to collection; view is updated via event 'add'
@@ -75,20 +77,18 @@
      el: $('#zen_rule'),
      events: {
      },
-     initialize: function(){
+     initialize: function(zen_rule){
         _.bindAll(this, 'render'); 
-       this.render()
+       this.render(zen_rule)
      },
 
-     render: function() {
+     render: function(zen_rule) {
        var self = this;
        
        //generate a zen master rule for this dinosaur
-       var map_size = [0,'small','medium','large'];
-       var color = [0,'red','green','yellow'];  
-
-       var zen_rule = rndrule();
-       //meal is an array with food objects that have size property and color property
+       var map_size = [0,'small','med','large'];
+       var color = [0,'nut','plant','insect'];  
+       //meal is an array with food objects that have size property and food-type property
        var zen_meal = mealgen(zen_rule)
        var foods_array = [];
        console.log(zen_meal)
@@ -104,27 +104,23 @@
          is_happy : true
        });
        
-       var html_str = "<div><ul><li>";
+       var html_str = "";
        
        for(var i = 0; i < meal.get("foods").length; i++) {
-         html_str += "<div class='foodtainer " + meal.get("foods")[i].get("food") + " "+ meal.get("foods")[i].get("size") +"'></div>"
+         html_str += "<div class='foodtainer'><img src='assets/"+ meal.get("foods")[i].get("size")+"_"+meal.get("foods")[i].get("food")+".png'></div>"
        }
-       html_str += "</li></ul></div>";
+       html_str += "";
        
        console.log(html_str);
-       console.log($(this.el));
        $(this.el).append(html_str);
-       
-       console.log($(this.el).html());
      },
 
    });
   
-  
-  
   var guessView = new GuessView();
-  var dinoView = new DinoView();
+  var Zen_Rule = rndrule();
+
+  var dinoView = new DinoView(Zen_Rule);
   
   
-  
-})(jQuery);
+});
