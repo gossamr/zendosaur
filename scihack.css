@@ -75,3 +75,15 @@ html {
 .false {
     display: none;
 }
+
+.guesslist .rancherhead {
+  width: 5em;
+  height: 5em;  
+}
+.guesslist .rancherhead.happy {
+  background: url("images/happy.png") no-repeat;
+}
+
+.guesslist .rancherhead.sad {
+  background: url("images/sad.png") no-repeat;
+}

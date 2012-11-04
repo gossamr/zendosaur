@@ -1,50 +1,69 @@
-<link rel="stylesheet" href="scihack.css" type="text/css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="scihack.js"></script>
-<script type="text/javascript" src="datacore.js"></script>
+<html>
+  <head>
+    <link rel="stylesheet" href="scihack.css" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.6/underscore-min.js"></script>
+    <script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script>
+    <script type="text/javascript" src="scihack.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="datacore.js"></script>
+  
+    <div class='page'>
 
-<div id="guess" >guess</div>
+      <ul class='guesslist'>
+        <li class='guess'>
+          <div class='rancherhead'></div>
+          <div class='foodtainer'></div>
+          <div class='foodtainer'></div>
+          <div class='foodtainer'></div>
+          <div class='foodtainer'></div>
+        </li>
+      </ul>
 
-<div class="wrap">
-        <div class="container">
-            <div class="red small"></div>
-        </div>
-                       
-        <div class="container">
-            <div class="green large"></div>
-        </div>      
+      <div class='dinospot'>
+        <div class='dinoart'></div>
+        <div class='healthbar'></div>
+      </div>
 
-        <div class="container">
-            <div class="yellow medium"></div>
+      <div class='keypad'>
+        <div class='pallette'>
+          <div class='foodtainer'>
+            <div class='food'></div>
+          </div>
+          <div class='foodtainer'>
+            <div class='food'></div>
+          </div>
+          <div class='foodtainer'>
+            <div class='food'></div>
+          </div>
+          <div class='foodtainer'>
+            <div class='food'></div>
+          </div>
         </div>
 
-        <div class="container">
-            <div class="red medium"></div>
+        <div class='grid'>
+          <div class='row'>
+            <div class='foodtainer'></div>
+            <div class='foodtainer'></div>
+            <div class='foodtainer'></div>
+          </div>
+          <div class='row'>
+            <div class='foodtainer'></div>
+            <div class='foodtainer'></div>
+            <div class='foodtainer'></div>
+          </div>
+          <div class='row'>
+            <div class='foodtainer'></div>
+            <div class='foodtainer'></div>
+            <div class='foodtainer'></div>
+          </div>
         </div>
+        <div class='feed'></div>
+        <div class='recipe'></div>
+      </div>
 
-    <div class="settings">
-        <div>
-            <div class="container red">
-            </div>
-        
-            <div class="container green">
-            </div>
-        
-            <div class="container yellow">
-            </div>
-        </div>
-        <div>
-            <div class="container">
-                <div class="small"></div>
-            </div>
-            
-            <div class="container">
-                <div class="medium"></div>
-            </div>
-            
-            <div class="container">
-                <div class="large"></div>
-            </div>
-        </div>
     </div>
-</div>
+
+  </body>
+</html>
