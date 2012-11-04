@@ -19,7 +19,7 @@ $(document).ready( function() {
   
   // the view container for the guesses
   var GuessView = Backbone.View.extend({
-    el: $('.guesslist'),
+    el: $('.page'),
     events: {
       'click #feed': 'addGuess'
     },
@@ -38,6 +38,7 @@ $(document).ready( function() {
       
     },
     addGuess: function() {
+      console.log("guess is registered")
       //on clicking the guess button, take the info from the dom of where the guess is located, and then translate it into a meal.  take the meal and compare it with mealeval(meal, rule)
       
       //will need to extract these foods from the html configuration
@@ -78,7 +79,7 @@ $(document).ready( function() {
       html_str +="</li>";
       console.log("the element")
       console.log($( this.el));
-      $( this.el).append(html_str);
+      $('.guesslist',this.el).append(html_str);
     }
   });
   

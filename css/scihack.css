@@ -209,11 +209,13 @@ html {
   background:url('../assets/large_insect.png');
 
 }
+
 .rancherhead.happy {
-  background: green;
+  background-color: #90EE90;
 }
 .rancherhead.sad {
-  background: red;
+  background-color: #FFB6C1;
+
 }  
 
 
