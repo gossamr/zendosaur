@@ -211,6 +211,10 @@ html {
 
 }
 
+.rancherhead {
+    font-size: 60px;
+}
+
 .rancherhead.happy {
   background-color: #90EE90;
 }
