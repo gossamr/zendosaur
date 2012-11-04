@@ -17,6 +17,8 @@ $(document).ready( function() {
       model: Meal
     });
   
+  var guesscount = 1;
+
   // the view container for the guesses
   var GuessView = Backbone.View.extend({
     el: $('.page'),
@@ -70,7 +72,7 @@ $(document).ready( function() {
   
     appendGuess: function(guess) {
     
-      var html_str = "<li class='guess'><div class='rancherhead "+ (guess.get("is_happy") ? "happy" : "sad") + "'></div>";
+      var html_str = "<li class='guess'><div class='rancherhead "+ (guess.get("is_happy") ? "happy" : "sad") + "'>" + guesscount + "</div>";
     
       for (var i = 0; i < guess.get("foods").length; i++) {
         var g = guess.get("foods")[i];
@@ -81,6 +83,7 @@ $(document).ready( function() {
       console.log("the element")
       console.log($( this.el));
       $('.guesslist',this.el).append(html_str);
+      guesscount += 1;
     }
   });
   
