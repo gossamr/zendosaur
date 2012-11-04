@@ -1,8 +1,13 @@
 $(document).ready(function(){
-  var selection = {};
   $("#keypad .palette .foodtainer").click(function(){
       $("#keypad .palette .foodtainer").removeClass("selected");
       $(this).addClass("selected");
   });
-  $("#keypad .grid ")
+  $("#keypad .grid .foodtainer").click(function(){
+    var selected = $("#keypad .palette .foodtainer.selected");
+    var thisfood = $(this).attr("data-food");
+    var thisimage = $(this).html();
+    selected.data(thisfood);
+    selected.html(thisimage);
+  })
 });
