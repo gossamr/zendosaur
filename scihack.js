@@ -20,6 +20,7 @@ function rnd(num) {
 
 function rndrule() {
   type = rnd(3); 
+  var rule = {};
   // food has color(3), size(3)
   switch(type) {
     case 1:
@@ -59,7 +60,7 @@ function mealgen(rule) {
     }
     matches = mealeval(meal, rule);
   }
-
+  console.log(meal);
   return meal;
 }
 
