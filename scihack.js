@@ -60,22 +60,37 @@ function mealgen(rule) {
     }
     matches = mealeval(meal, rule);
   }
-  console.log(meal);
   return meal;
 }
 
 function mealeval(meal, rule) {
-
-  return true;
+  var match = 0;
+  if (rule.num && meal.length == rule.num) { match = 1; };
+  for (var i = 0; i < meal.length; i++) {  
+    if (rule.size && meal[i].size == rule.size) {
+      match = 1;
+    }
+    if (rule.color && meal[i].color == rule.color) {
+      match = 1;
+    }
+  }
+  return match;
 }
 
-Array.prototype.shuffle = function () {
-    for (var i = this.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var tmp = this[i];
-        this[i] = this[j];
-        this[j] = tmp;
-    }
-
-    return this;
+function recipegen(rule) {
+  var recipe;
+  var size = [0,'small','medium','large'];
+  var color = [0,'red','green','yellow'];  
+  if (rule.num > 1) {
+    recipe = "He wants to eat "+rule.num+" bites.";
+  } else {
+    recipe = "He wants to eat 1 bite.";
+  }
+  if (rule.size) {
+    recipe = "He wants to eat a "+size[rule.size]+" portion.";
+  }
+  if (rule.color) {
+    recipe = "He wants to eat a "+color[rule.color]+" bite.";
+  }
+  return recipe;
 }
