@@ -8,7 +8,8 @@ html {
 }
 
 .page {
-    width: 900px;
+    position: relative;
+    width: 70%;
     height: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -19,9 +20,11 @@ html {
 
 .mastermeal {
     width: 100%;
+    background-color: yellow;
 }
 
-    .mastermeal > span {
+    .mastermeal > div {
+        float: left;
         width: 20%;
         height: 150px;
     }
@@ -54,7 +57,7 @@ html {
     width: 100%;
 }
 
-    .guess > span {
+    .guess > div {
         width: 20%;
     }
 
@@ -68,7 +71,7 @@ html {
     width: 100%;
 }
 
-    .pallette > span {
+    .pallette > div {
         width: 25%;
     }
 
@@ -82,7 +85,7 @@ html {
         width: 100%;
     }
 
-        .grid .row > span {
+        .grid .row > div {
             width: 33%
         }
 
