@@ -70,7 +70,7 @@ html {
 
 
 
-.keypad {
+#keypad {
     float: right;
     width: 50%;
     background: orange;
@@ -84,14 +84,15 @@ html {
     .palette > div {
         float: left;
         width: 25%;
+        height: 100%;
     }
 
-    .palette .foodtainer {
+    .palette .foodtainer.selected {
         background-color: purple;
     }
 
     .palette .foodtainer img {
-        max-height: 100%;
+        max-height: 90%;
         display: block;
         margin-right: auto;
         margin-left: auto;
