@@ -65,6 +65,7 @@ $(document).ready( function() {
         
       })
       this.collection.add(meal); // add item to collection; view is updated via event 'add'
+      clearPalette();
     },
   
     appendGuess: function(guess) {
