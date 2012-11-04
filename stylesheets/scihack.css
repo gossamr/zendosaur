@@ -9,7 +9,7 @@ html {
 
 .page {
     position: relative;
-    width: 70%;
+    max-width: 780px;
     height: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -113,6 +113,15 @@ html {
         }
 
 
+
+@media screen and (max-width: 480px) {
+    .dinospot {
+        position: absolute;
+        width: 100%;
+        display: none;
+    }
+
+}
 
 
 /*.container {
