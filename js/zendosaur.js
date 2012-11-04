@@ -141,7 +141,13 @@ function recipegen(rule, dinoname) {
   return recipe;
 }
 
-function parsefood(foodtainer) {
-  var arr = foodtainer.data('food').split(' ');
-  return { size: arr[0], color: arr[1] };
+function parsepalettemeal() {
+  var meal = [];
+  $('.palette .foodtainer').each(function(){ 
+    if ($(this).data("food")) {
+      var arr = $(this).data("food").split(' ');
+      meal.push({ size: arr[0], color: arr[1] } ); 
+    }
+  });
+  return meal; 
 }

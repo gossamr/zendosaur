@@ -7,7 +7,7 @@ $(document).ready(function(){
     var selected = $("#keypad .palette .foodtainer.selected");
     var thisfood = $(this).attr("data-food");
     var thisimage = $(this).html();
-    selected.data(thisfood);
+    selected.data('food', thisfood);
     selected.html(thisimage);
   })
 });
