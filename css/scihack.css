@@ -27,6 +27,7 @@ html {
 
 .guess {
     width: 100%;
+    clear: both;
 }
 
     .guess > div {
@@ -160,80 +161,40 @@ html {
 
 }
 
-
-/*.container {
-    width: 3em;
-    height: 3em;
-    display: inline-block;
-    box-shadow: inset 1px 1px 6px rgba(0, 0, 0, .3);
-    border: 1px solid rgba(0, 0, 0, .2);
-    margin: 1em;
-    border-radius: 3px;
-    background-color: white;
+#zen_rule .foodtainer {
+}
+.foodtainer.nut.small {
+  background:url('../assets/small_nut.png');
+}
+.foodtainer.nut.medium {
+  background:url('../assets/med_nut.png');
+}
+.foodtainer.nut.large {
+  background:url('../assets/large_nut.png');
 }
 
-.container.selected {
-    border: 1px solid rgba(0, 0, 0, .6);
+.foodtainer.plant.small {
+  background:url('../assets/small_plant.png');
+  
+}
+.foodtainer.plant.medium {
+  background:url('../assets/med_plant.png');
+  
 }
 
-.container div {
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, .3);
-    border-radius: 3px;          
-} 
-
-.settings {
-    background: #eee;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
+.foodtainer.plant.large {
+  background:url('../assets/large_plant.png');
+  
 }
-
-.wrap {
-    display: inline-block;
+.foodtainer.insect.small {
+  background:url('../assets/small_insect.png');
+  
 }
-
-
-
-.large {
-    width: 2em;
-    height: 2em;
-    margin: .5em;
+.foodtainer.insect.medium {
+  background:url('../assets/med_insect.png');
+  
 }
-
-.medium {
-    width: 1.5em;
-    height: 1.5em;
-    margin: .75em;
+.foodtainer.insect.large {
+  background:url('../assets/large_insect.png');
+  
 }
-
-.small {
-    width: 1em;
-    height: 1em;
-    margin: 1em;
-}
-
-
-
-.red {
-    background-color: #f00;
-}
-
-.green {
-    background-color: #0b5;
-}
-
-.yellow {
-    background-color: #fe0;
-}
-
-
-
-
-.true {
-    display: block;
-}
-
-.false {
-    display: none;
-}
-​*/
