@@ -79,16 +79,9 @@ function numeval(meal, rule) {
   return true;
 }
 
-function sizeeval(food, rule) {
-  if (rule.size) {
-    return (food.size == rule.size);
-  }
-  return true;
-}
-
-function coloreval(food, rule) {
-  if (rule.color) {
-    return (food.color == rule.color);
+function foodeval(food, rule, type) {
+  if (rule[type]) {
+    return (food[type] == rule[type]);
   }
   return true;
 }
@@ -96,7 +89,7 @@ function coloreval(food, rule) {
 function mealeval(meal, rule) {
   var match = false;
   for (i = 0; i < meal.length; i++) {
-    match = match || (sizeeval(meal[i], rule) && coloreval(meal[i], rule));
+    match = match || (foodeval(meal[i], rule, 'size') && foodeval(meal[i], rule, 'color'));
   }
   return numeval(meal, rule) && match;
 }
